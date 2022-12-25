@@ -2,6 +2,7 @@
 <html lang="zxx">
 
 <head>
+{% load static %}
     <meta charset="UTF-8">
     <meta name="description" content="Phozogy Template">
     <meta name="keywords" content="Phozogy, unica, creative, html">
@@ -19,18 +20,24 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href=" {% static 'css/style.css'%}" type="text/css">
+
+    {% block head %}  {% endblock %}
 </head>
-
-
 <body>
-
+    {% include 'header.html' %}
+    {% block slider %} {% endblock %}
+    {% block content %}  {% endblock %}
+    {% include 'footer.html' %}
+    {% block foot %} {% endblock %}
 </body>
 
 </html>
